@@ -5,7 +5,7 @@ const prisma = new PrismaClient()
 async function main() {
 const result = await prisma.courses.update({
     where: {
-        id: "58928e76-cc77-4d5b-80da-6c16486141ba"
+        id: "a0d8864d-fd0c-4b77-8425-636400ff978b"
     },
     data: {
         duration:250,

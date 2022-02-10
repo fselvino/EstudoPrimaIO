@@ -11,13 +11,13 @@ datasource db {
 }
 
 model Courses {
-  id          String   @id @default(uuid())
-  name        String   @unique
-  description String?
-  duration    Int
-  created_at  DateTime @default(now())
-  teacher     Teachers @relation(fields: [teacherId], references: [id])
-  teacherId   String   @unique
+  id           String    @id @default(uuid())
+  name         String    @unique
+  description  String?
+  duration     Int
+  created_at   DateTime  @default(now())
+  teacher      Teachers? @relation(fields: [fk_teacherId], references: [id])
+  fk_teacherId String?   @unique
 
   @@map("courses")
 }
@@ -38,4 +38,23 @@ model Teachers {
   courses Courses?
 
   @@map("teachers")
+}
+
+model Authors {
+  id   String @id @default(uuid())
+  name String @unique
+
+  books Books[]
+
+  @@map("authors")
+}
+
+model Books {
+  id        String @id @default(uuid())
+  name      String @unique
+  author_id String
+
+  author Authors @relation(fields: [author_id], references: [id])
+
+  @@map("books")
 }

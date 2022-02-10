@@ -10,7 +10,7 @@ async function main() {
             duration:300,
             teacher:{
                 connect:{
-                    id:"f5827890-33ef-4ded-8532-da9514df652a"
+                    id:"8754b8e3-d96a-4a6b-9f86-0a44a7780f1e"
                 }
             }
             
